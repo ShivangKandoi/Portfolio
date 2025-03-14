@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useTheme } from 'next-themes';
 
 interface RetroGridProps {
@@ -22,9 +22,16 @@ export function RetroGrid({
 }: RetroGridProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const scrollPos = useRef(0);
-  const { theme } = useTheme();
+  const { theme, systemTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-  const isDark = theme === 'dark';
+  // Only access theme after component is mounted
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const currentTheme = theme === 'system' ? systemTheme : theme;
+  const isDark = mounted && currentTheme === 'dark';
   const lineColor = isDark ? 'rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.2)';
   const opacity = isDark ? 0.15 : 0.25;
 
@@ -106,12 +113,15 @@ export function RetroGrid({
       window.removeEventListener('resize', resizeCanvas);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [angle, cellSize, lineWidth, speed, opacity, lineColor, theme]);
+  }, [angle, cellSize, lineWidth, speed, opacity, lineColor, currentTheme]);
+
+  // Base classes that don't depend on theme
+  const baseClasses = "absolute inset-0 h-full w-full bg-gradient-to-b from-white via-gray-50 to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-950";
 
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 h-full w-full bg-gradient-to-b from-white via-gray-50 to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-950"
+      className={baseClasses}
       style={{ mixBlendMode: isDark ? 'soft-light' : 'normal' }}
     />
   );
