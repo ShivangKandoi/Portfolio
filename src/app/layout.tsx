@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Navigation } from "./components/Navigation";
+import { AudioPlayer } from "./components/AudioPlayer";
+import Script from "next/script";
 import { Providers } from "./providers";
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
   display: 'swap',
-  preload: true
 });
 
 export const metadata: Metadata = {
@@ -26,18 +28,26 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <Script 
+          src="https://w.soundcloud.com/player/api.js" 
+          strategy="beforeInteractive"
+        />
       </head>
       <body className={`${inter.className} relative antialiased`}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Navigation />
+          {children}
+          <AudioPlayer />
+        </Providers>
       </body>
     </html>
   );
