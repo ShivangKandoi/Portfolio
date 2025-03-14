@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Shivang Kandoi - Portfolio Website
 
-## Getting Started
+[![Website](https://img.shields.io/badge/Website-Live-2ea44f?style=for-the-badge)](https://shivangkandoi.vercel.app)
 
-First, run the development server:
+A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS. Showcasing my projects, skills, and journey in tech.
+
+## 🚀 Features
+
+- **Modern Design**: Clean and professional UI with dark/light mode support
+- **Responsive**: Fully responsive design that works on all devices
+- **Performance**: Built with Next.js for optimal performance and SEO
+- **Interactive**: Smooth animations and transitions using Framer Motion
+- **Contact Form**: Direct email integration for easy communication
+- **Project Showcase**: Detailed project cards with live demos and source code links
+
+## 💻 Tech Stack
+
+- **Framework**: Next.js 14
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React, Font Awesome
+- **Deployment**: Vercel
+
+## 🌟 Projects Featured
+
+- **Zemon 2.0**: Team collaboration platform with music integration
+- **ZEMON**: Open-source community platform
+- **SphereX**: AI-powered social platform
+- **Expense Tracker**: Financial management tool
+- **RJ Project**: JavaScript framework
+- **AI Chron**: AI-powered productivity platform
+
+## 🛠️ Development
 
 ```bash
+# Clone the repository
+git clone https://github.com/shivangkandoi/portfolio
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📱 Contact
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Website: [shivangkandoi.vercel.app](https://shivangkandoi.vercel.app)
+- Email: shivang.k006@gmail.com
+- LinkedIn: [Shivang Kandoi](https://www.linkedin.com/in/shivang-kandoi-7a8579322/)
+- GitHub: [@shivangkandoi](https://github.com/shivangkandoi)
+- X: [@KandoiShiv3883](https://twitter.com/KandoiShiv3883)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📄 License
 
-## Learn More
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-To learn more about Next.js, take a look at the following resources:
+## 🙏 Acknowledgments
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Built with [Next.js](https://nextjs.org/)
+- Styled with [Tailwind CSS](https://tailwindcss.com/)
+- Animations by [Framer Motion](https://www.framer.com/motion/)
+- Icons from [Lucide](https://lucide.dev/) and [Font Awesome](https://fontawesome.com/)
+- Deployed on [Vercel](https://vercel.com)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
